@@ -21,7 +21,7 @@ echo Building..
 
 echo /\* $filename >$filename
 echo Beschreibung : $description >>$filename
-echo Name : Nils Ramstoeck >>$filename
+echo Name : $HS_NAME >>$filename
 echo Erstellungsdatum : `date +%d.%m.%Y` \*/>>$filename
 echo  >>$filename
 echo \#include\<stdio.h\> >>$filename

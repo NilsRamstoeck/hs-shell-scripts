@@ -1,0 +1,32 @@
+#!/bin/bash
+
+echo "Enter full name:"
+read full_name
+echo
+echo "Enter inf number:"
+read inf_number
+echo
+echo -n "Password (will not be echoed)":
+read -s password
+echo
+echo Name: $full_name
+echo inf: $inf_number
+
+#copy files
+cp bash_hs ~/.bash_hs
+cp mkc /bin
+
+#Replace placeholders with actual values
+sed -i "s/%NAME/\"$full_name\"/g" ~/.bash_hs
+sed -i "s/%INF_NUM/\"$inf_number\"/g" ~/.bash_hs
+sed -i "s/%PASS/$password/g" ~/.bash_hs
+
+#add bash_hs to be sourced if not already
+if grep -q  "source ~/.bash_hs" ~/.bashrc; then
+  echo "Already sourced" # SomeString was found
+else
+  echo "source ~/.bash_hs" >> ~/.bashrc
+fi
+
+echo "DONE"
+echo "Restart Terminal or type 'source ~/.bashrc' to update changes"

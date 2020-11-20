@@ -1,0 +1,6 @@
+#! /bin/bash
+rm ~/.bash_hs
+rm /bin/mkc
+sed -i "/source ~\/.bash_hs/d" ~/.bashrc
+echo "DONE"
+echo "Restart Terminal to update changes"

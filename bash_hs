@@ -1,0 +1,6 @@
+#!/bin/bash
+
+HS_INF_NUM=%INF_NUM
+export HS_NAME=%NAME
+alias sshs="sshpass -p %PASS ssh $HS_INF_NUM@nibelung.hs-worms.de"
+#alias test="echo allgood"
