@@ -1,0 +1,34 @@
+#!/bin/sh
+filename=$1
+description=$2
+
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied"
+    exit
+fi
+
+
+if [ "${filename:${#filename}-2:2}" != '.c' ]
+ then
+   echo Appending extension...
+  filename=$filename".c"
+fi
+
+echo Filename: $filename
+echo Description: $description
+echo Building..
+
+echo /\* $filename >$filename
+echo Beschreibung : $description >>$filename
+echo Name : Nils Ramstoeck >>$filename
+echo Erstellungsdatum : `date +%d.%m.%Y` \*/>>$filename
+echo  >>$filename
+echo \#include\<stdio.h\> >>$filename
+echo  >>$filename
+echo int main\(\){ >>$filename
+echo  >>$filename
+echo return 0\; >> $filename
+echo } >>$filename
+echo DONE
+atom $filename
