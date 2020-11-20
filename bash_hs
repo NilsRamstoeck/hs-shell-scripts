@@ -3,4 +3,7 @@
 HS_INF_NUM=%INF_NUM
 export HS_NAME=%NAME
 alias sshs="sshpass -p %PASS ssh $HS_INF_NUM@nibelung.hs-worms.de"
-#alias test="echo allgood"
+
+alias ll='ls -l'                              # long list
+alias new=" echo '\"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Cygwin\Cygwin64 Terminal.lnk\"' | cmd" #new cygwin terminal
+alias rmc="rm *.exe" #delete all executables
