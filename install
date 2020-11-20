@@ -6,7 +6,7 @@ echo
 echo "Enter inf number:"
 read inf_number
 echo
-echo -n "Password (will not be echoed)":
+echo -n "HS Password (will not be echoed)":
 read -s password
 echo
 echo Name: $full_name
